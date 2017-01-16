@@ -1,0 +1,13 @@
+sudo -u postgres psql
+
+CREATE USER fiasuser WITH password 'pass';
+
+CREATE DATABASE fias;
+GRANT ALL privileges ON DATABASE rbregister TO rbuser;
+
+CREATE DATABASE companyminer;
+GRANT ALL privileges ON DATABASE companyminer TO fiasuser;
+
+\q
+
+sudo service postgresql restart
